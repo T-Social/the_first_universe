@@ -1,0 +1,273 @@
+:root {
+  --accent: #7c5cff;
+  --muted: #9aa2b1;
+  --bg-primary: #0f1724;
+  --bg-gradient: #071025;
+  --text-primary: #e6eef8;
+  --text-strong: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --progress-bg: rgba(255, 255, 255, 0.06);
+  --equip-slot-border: rgba(255, 255, 255, 0.04);
+  --log-bg: rgba(255, 255, 255, 0.01);
+  --btn-light-bg: #f8f9fa;
+  --btn-light-text: #212529;
+  --btn-outline-light-text: #f8f9fa;
+  --btn-outline-light-border: #f8f9fa;
+
+  /* option / select */
+  --option-bg: #071025;
+  --option-text: #fff;
+
+  /* btn-close */
+  --btn-close-icon: #bababa !important;
+  --btn-close-filter: invert(1);
+
+  /* selection border (for select/form-select/input) */
+  --selection-border: #ffffff;
+
+  /* input focus background */
+  --input-focus-bg: var(--bg-gradient);
+}
+
+[data-theme="light"] {
+  --accent: #6a48de;
+  --muted: #5a6472;
+  --bg-primary: #f8f9fa;
+  --bg-gradient: #f1f3f5;
+  --text-primary: #212529;
+  --text-strong: #000000;
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.1);
+  --progress-bg: #e9ecef;
+  --equip-slot-border: rgba(0, 0, 0, 0.08);
+  --log-bg: rgba(0, 0, 0, 0.02);
+  --btn-light-bg: #343a40;
+  --btn-light-text: #ffffff;
+  --btn-outline-light-text: #343a40;
+  --btn-outline-light-border: #343a40;
+
+  --option-bg: #ffffff;
+  --option-text: #000000;
+
+  --btn-close-filter: #363636 !important;
+  --btn-close-filter: invert(0);
+
+  --selection-border: #000000;
+  --input-focus-bg: var(--bg-gradient);
+}
+
+body {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-gradient) 55%);
+  color: var(--text-primary);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  transition: background 0.2s, color 0.2s;
+  min-height: 100vh;
+}
+
+/* -------------------------
+   Inputs / selects / options
+   ------------------------- */
+select,
+.form-select {
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--selection-border);
+  border-radius: 8px;
+  padding: .5rem .75rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+select option {
+  background-color: var(--option-bg);
+  color: var(--option-text);
+}
+
+span {
+  color: var(--text-primary);
+}
+
+.input-group-text {
+  background-color: var(--option-bg);
+  color: var(--option-text);
+  border: 1px solid var(--selection-border);
+}
+
+/* ช่องค้นหา (input[type="search"]) + input ทั่วไป */
+input,
+textarea,
+.form-control {
+  background-color: var(--bg-gradient);
+  color: var(--text-primary);
+  border: 1px solid var(--selection-border);
+  border-radius: 8px;
+  padding: .5rem .75rem;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+/* เมื่อโฟกัส */
+input:focus,
+textarea:focus,
+.form-control:focus,
+select:focus,
+.form-select:focus {
+  background-color: var(--input-focus-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--accent) !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.15);
+}
+
+/* Autofill Chrome */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--text-primary) !important;
+  -webkit-box-shadow: 0 0 0 1000px var(--input-focus-bg) inset !important;
+  transition: background-color 9999s ease-in-out 0s !important;
+}
+
+::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+/* Dropdown arrow */
+select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+                      calc(100% - 15px) calc(1em + 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2.25rem;
+}
+
+select option:hover,
+select option:checked {
+  background-color: var(--option-bg);
+  color: var(--option-text);
+}
+
+/* -------------------------
+   btn-close
+   ------------------------- */
+.btn-close {
+  color: var(--btn-close-icon) !important;
+  filter: var(--btn-close-filter);
+
+}
+/* -------------------------
+   Cards / forms / layout
+   ------------------------- */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6, .strong {
+  color: var(--text-strong);
+}
+
+.accent { color: var(--accent); }
+.btn-accent { background: linear-gradient(90deg, var(--accent), #4bb6ff); border: 0; color: #041022; }
+.small-muted { color: var(--muted); font-size: .9rem; }
+
+.equip-slot {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+  border: 1px dashed var(--equip-slot-border);
+}
+.equip-name { font-weight: 600; color: var(--text-strong); }
+.progress { height: 1rem; background: var(--progress-bg); }
+
+.loot-badge {
+  font-weight: 700;
+  padding: .25rem .5rem;
+  border-radius: .4rem;
+  background: var(--card-bg);
+}
+
+/* Theme-aware buttons */
+.btn-light {
+  background-color: var(--btn-light-bg);
+  color: var(--btn-light-text);
+  border-color: var(--btn-light-bg);
+}
+.btn-outline-light {
+  color: var(--btn-outline-light-text);
+  border-color: var(--btn-outline-light-border);
+}
+.btn-outline-light:hover {
+  color: var(--btn-light-text);
+  background-color: var(--btn-outline-light-text);
+}
+
+/* Character Card Styles */
+.char-card {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: .5rem;
+  padding: .75rem;
+  transition: border-color 0.2s;
+}
+.char-card.active {
+  border-color: var(--accent);
+}
+.char-card-name {
+  font-weight: 600;
+  color: var(--text-strong);
+}
+.char-card-stats {
+  font-size: .85rem;
+  color: var(--muted);
+}
+.modal-content {
+  background: var(--bg-primary);
+  border: 1px solid var(--card-border);
+}
+
+/* Scrollable areas */
+#battleLog {
+  height: 160px;
+  overflow-y: auto;
+  background: var(--log-bg);
+  padding: .75rem;
+  border-radius: .5rem;
+  font-size: .9rem;
+}
+#consoleBox {
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: .9rem;
+  background: var(--log-bg);
+  padding: .6rem;
+  border-radius: .4rem;
+}
+#inventoryRow {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+#characterRow {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Responsive helpers */
+@media (max-width: 767px) {
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
+}
+@media (min-width: 768px) {
+  .mobile-only { display: none; }
+  .desktop-only { display: block; }
+}
